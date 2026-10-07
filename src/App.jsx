@@ -9,8 +9,12 @@ function MarketsButton() {
   const navigate = useNavigate();
 
   return (
-    <button onClick={() => navigate("/markets")}>
-      <h1>Markets</h1>
+    <button
+      className="feature-button"
+      onClick={() => navigate("/markets")}
+    >
+      <h2>Markets</h2>
+
       <p>
         Explore the latest market trends and insights in South African Economy.
       </p>
@@ -22,8 +26,12 @@ function OnlineClassesButton() {
   const navigate = useNavigate();
 
   return (
-    <button onClick={() => navigate("/online-classes")}>
-      <h1>Online Classes</h1>
+    <button
+      className="feature-button"
+      onClick={() => navigate("/online-classes")}
+    >
+      <h2>Online Classes</h2>
+
       <p>
         Enhance your skills with our interactive online courses.
       </p>
@@ -35,8 +43,12 @@ function BusinessOpportunitiesButton() {
   const navigate = useNavigate();
 
   return (
-    <button onClick={() => navigate("/business-opportunities")}>
-      <h1>Business Opportunities</h1>
+    <button
+      className="feature-button"
+      onClick={() => navigate("/business-opportunities")}
+    >
+      <h2>Business Opportunities</h2>
+
       <p>
         Discover new business opportunities and investment prospects.
       </p>
@@ -48,8 +60,12 @@ function InvestmentsButton() {
   const navigate = useNavigate();
 
   return (
-    <button onClick={() => navigate("/investments")}>
-      <h1>Investments</h1>
+    <button
+      className="feature-button"
+      onClick={() => navigate("/investments")}
+    >
+      <h2>Investments</h2>
+
       <p>
         Grow your wealth with our expert investment strategies.
       </p>
@@ -59,40 +75,66 @@ function InvestmentsButton() {
 
 function Information() {
   return (
-    <>
-      <h1>About Us</h1>
-      <h1>Contact Us</h1>
-      <h1>Privacy Policy</h1>
-      <h1>Terms of Service</h1>
-      <h1>FAQ</h1>
-      <h1>Support</h1>
-    </>
+    <section className="information">
+      <h3>About Us</h3>
+      <h3>Contact Us</h3>
+      <h3>Privacy Policy</h3>
+      <h3>Terms of Service</h3>
+      <h3>FAQ</h3>
+      <h3>Support</h3>
+    </section>
   );
 }
 
 function Home() {
   return (
-    <>
-      <h1>Welcome To NextCapital</h1>
+    <div className="home">
 
-      <p>Where Innovation Meets Excellence</p>
+      <header className="header">
+        <h1>NextCapital</h1>
 
-      <MarketsButton />
+        <p>Financial knowledge. Opportunities. Growth.</p>
+      </header>
 
-      <OnlineClassesButton />
+      <main>
 
-      <BusinessOpportunitiesButton />
+        <section className="hero">
+          <h2>Build Your Financial Future</h2>
 
-      <InvestmentsButton />
+          <p>
+            Explore financial markets, learn new skills, discover business
+            opportunities and make informed investment decisions.
+          </p>
+        </section>
 
-      <Information />
-    </>
+        <section className="features">
+
+          <MarketsButton />
+
+          <OnlineClassesButton />
+
+          <BusinessOpportunitiesButton />
+
+          <InvestmentsButton />
+
+        </section>
+
+        <Information />
+
+      </main>
+
+      <footer>
+        <p>© 2026 NextCapital. All rights reserved.</p>
+      </footer>
+
+    </div>
   );
 }
 
 export default function App() {
   return (
     <BrowserRouter>
+
       <Routes>
 
         <Route path="/" element={<Home />} />
@@ -115,6 +157,7 @@ export default function App() {
         />
 
       </Routes>
+
     </BrowserRouter>
   );
 }
