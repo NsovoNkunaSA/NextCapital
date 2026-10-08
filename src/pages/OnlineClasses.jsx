@@ -6,6 +6,7 @@ export default function OnlineClasses() {
       <p>
         Enhance your skills with our comprehensive online courses.
       </p>
+      
     </>
   );
 }
