@@ -1,60 +1,16 @@
-# NextCapital
+# React + Vite
 
-NextCapital is a responsive financial learning and planning website for people building money skills, managing a small business or exploring investing. The home page organizes the experience into four sections: Markets, Learn, Business Growth and Investments. Visitors can open and use the tools without creating an account.
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-## What the website does
+Currently, two official plugins are available:
 
-- **Markets:** Displays currency price movement on a chart. Visitors can select a currency pair and time range, refresh the view and compare the latest shown value with the period high and low. The page uses Twelve Data when configured; otherwise it clearly labels its generated sample values as illustrative, not current exchange rates.
-- **Learn:** Provides short lessons about budgeting, business cash flow, digital payments, borrowing costs, investing and payment scams. Visitors can search by keyword, filter by topic and mark lessons complete.
-- **Business Growth:** Helps young founders and township or rural businesses think through how digital tools can support starting, trading, getting paid, managing cash flow and reaching formal markets. A checklist covers business registration, digital payments, bookkeeping, procurement access, market links, funding readiness and fraud protection.
-- **Investments:** Lets visitors adjust a starting amount, monthly contribution, estimated annual return and investment period to see a hypothetical compound-growth projection in South African rand.
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
 
-## Current scope
+## React Compiler
 
-NextCapital is an educational prototype, not a financial services platform. It does not currently register businesses, process payments, provide procurement listings, arrange funding or execute investments. The business checklist is a planning aid, not an application to a government or financial service. Lesson completion and checklist selections are held in page state and reset when the page reloads. The investment result is an estimate, not a guaranteed return or financial advice.
+The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
 
-No demo login is required because the website currently has no sign-in feature. Market data is illustrative unless a Twelve Data API key is configured.
+## Expanding the ESLint configuration
 
-## Run locally
-
-Requirements: Node.js and npm.
-
-Install dependencies:
-
-```powershell
-npm install
-```
-
-Start the development server:
-
-```powershell
-npm run dev
-```
-
-Vite prints the local URL in the terminal, usually `http://localhost:5173`.
-
-## Optional live market data
-
-The Markets page uses the Twelve Data time-series API when an API key is configured. Create a `.env.local` file in the project root and add:
-
-```dotenv
-VITE_TWELVE_DATA_API_KEY=your_twelve_data_api_key
-```
-
-Restart the development server after changing environment variables. Keep `.env.local` private and do not commit API keys. Without a key, or if the feed cannot be reached, the page displays illustrative sample values.
-
-## Available commands
-
-```powershell
-npm run dev
-npm run lint
-npm run build
-npm run preview
-```
-
-## Technology
-
-- React
-- Vite
-- React Router
-- Recharts
+If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
