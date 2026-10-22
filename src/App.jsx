@@ -1,48 +1,44 @@
-import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
-import Markets from "./pages/Markets";
-import OnlineClasses from "./pages/OnlineClasses";
+import { BrowserRouter, Link, Route, Routes } from "react-router-dom";
 import BusinessOpportunities from "./pages/BusinessOpportunities";
 import Investments from "./pages/Investments";
+import Markets from "./pages/Markets";
+import OnlineClasses from "./pages/OnlineClasses";
 
-const platforms = [
+const sections = [
   {
     path: "/markets",
     number: "01",
-    title: "Markets",
-    id: "markets",
     eyebrow: "UNDERSTAND THE MOVEMENT",
+    title: "Markets",
     description: "Follow currency pairs, compare recent price ranges and explore what changes over time.",
-    details: ["Currency pair comparison", "Adjustable time ranges", "Market data summaries"],
-    action: "Open Markets",
+    features: ["Currency pair comparison", "Adjustable time ranges", "Market data summaries"],
+    action: "Explore markets",
   },
   {
     path: "/online-classes",
     number: "02",
-    title: "Learn",
-    id: "learn",
     eyebrow: "BUILD PRACTICAL SKILLS",
+    title: "Learn",
     description: "Learn at your own pace with short lessons on money, business and investing basics.",
-    details: ["Searchable lessons", "Filter by topic", "Track completed classes"],
+    features: ["Searchable lessons", "Topic filters", "Completion tracking"],
     action: "Browse classes",
   },
   {
     path: "/business-opportunities",
     number: "03",
-    title: "Business Growth",
-    id: "business",
     eyebrow: "TOOLS FOR LOCAL BUSINESS",
-    description: "How might digital tools help young founders and township or rural businesses start, trade, get paid, manage cash flow and reach formal markets?",
-    details: ["Business registration", "Digital payments", "Bookkeeping", "Procurement access", "Market links", "Funding readiness and fraud protection"],
-    action: "Build a readiness plan",
+    title: "Business Growth",
+    description: "Cash-flow tracking, a practical readiness checklist and next-step recommendations for young founders and township or rural businesses.",
+    features: ["Sales, expenses and stock costs", "Business readiness checklist", "Personalised action plan"],
+    action: "Open business tools",
   },
   {
     path: "/investments",
     number: "04",
-    title: "Investments",
-    id: "invest",
     eyebrow: "PLAN FOR THE LONG TERM",
-    description: "See how a starting amount, regular contributions and time can shape an investment projection.",
-    details: ["Set a starting amount", "Adjust monthly contributions", "Compare estimated growth"],
+    title: "Investments",
+    description: "See how a starting amount, regular contributions and time can shape a hypothetical investment projection.",
+    features: ["Adjustable starting amount", "Monthly contributions", "Estimated growth"],
     action: "Try the calculator",
   },
 ];
@@ -66,18 +62,15 @@ function Home() {
         <div className="hero-copy">
           <p className="eyebrow">FINANCIAL TOOLS FOR REAL LIFE</p>
           <h1>Make your next move <em>count.</em></h1>
-          <p className="hero-intro">
-            Clear tools for understanding markets, building money skills, growing a business
-            and planning for the future.
-          </p>
+          <p className="hero-intro">Clear tools for understanding markets, building money skills, growing a business and planning for the future.</p>
           <a className="primary-link" href="#platforms">Explore the sections <span aria-hidden="true">↓</span></a>
         </div>
-        <div className="hero-note">
+        <aside className="hero-note">
           <span className="note-kicker">A better financial starting point</span>
           <p>Learn at your pace. Make informed choices. Keep your goals in view.</p>
           <span className="note-rule" aria-hidden="true" />
           <span className="note-caption">Built for the long game</span>
-        </div>
+        </aside>
       </section>
 
       <section className="platform-section" id="platforms" aria-labelledby="platform-title">
@@ -89,17 +82,17 @@ function Home() {
           <p>Tools and guidance for the choices you are working through.</p>
         </div>
         <div className="platform-sections">
-          {platforms.map((platform) => (
-            <section className={`platform-section-row section-${platform.id}`} id={platform.id} key={platform.path}>
+          {sections.map((section) => (
+            <section className={`platform-section-row section-${section.number}`} key={section.path}>
               <div className="platform-section-main">
-                <span className="card-number">{platform.number}</span>
-                <p className="eyebrow">{platform.eyebrow}</p>
-                <h3>{platform.title}</h3>
-                <p className="platform-description">{platform.description}</p>
-                <Link className="section-action" to={platform.path}>{platform.action} <span aria-hidden="true">↗</span></Link>
+                <span className="card-number">{section.number}</span>
+                <p className="eyebrow">{section.eyebrow}</p>
+                <h3>{section.title}</h3>
+                <p className="platform-description">{section.description}</p>
+                <Link className="section-action" to={section.path}>{section.action} <span aria-hidden="true">↗</span></Link>
               </div>
               <ul className="platform-details">
-                {platform.details.map((detail) => <li key={detail}>{detail}</li>)}
+                {section.features.map((feature) => <li key={feature}>{feature}</li>)}
               </ul>
             </section>
           ))}
